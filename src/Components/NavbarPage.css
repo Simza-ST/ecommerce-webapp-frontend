@@ -1,0 +1,62 @@
+/* Additional styles for modals */
+.theme-modal .modal-content {
+    background-color: #fff; /* Change to preferred background color */
+    border-radius: 15px; /* Rounded borders for the modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box-shadow for depth */
+  }
+  
+  .theme-modal-header {
+    background-color: var(--gold); /* Header background color */
+    color: var(--black); /* Header text color */
+    font-family: 'Arial', sans-serif; /* Use the same font as your homepage */
+    border-top-left-radius: 15px; /* Rounded border to match the modal */
+    border-top-right-radius: 15px;
+  }
+  
+  .theme-modal-body {
+    padding: 20px;
+  }
+  
+  .theme-modal .btn-primary {
+    background-color: var(--gold); /* Button background color */
+    border-color: var(--black); /* Button border color */
+    box-shadow: none; /* Remove Bootstrap's default button shadow */
+  }
+  
+  .theme-modal .btn-primary:hover {
+    background-color: darken(var(--gold), 5%); /* Slightly darker on hover */
+  }
+  
+  .theme-modal .btn-secondary {
+    background-color: var(--black); /* Secondary button background */
+    border-color: var(--gold); /* Secondary button border */
+  }
+  
+  .theme-modal .form-control {
+    border-radius: 10px; /* Rounded borders for input fields */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border for inputs */
+  }
+  
+  .theme-modal .form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25); /* Focus color */
+  }
+  
+  .theme-modal .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.3); /* Placeholder text color */
+  }
+  
+  .theme-modal .form-label {
+    font-weight: bold; /* Bold labels */
+    color: var(--black); /* Label color */
+  }
+  
+  /* Adjustments for invalid feedback */
+  .theme-modal .invalid-feedback {
+    color: #dc3545; /* Error message color, typically Bootstrap's red */
+  }
+  
+  /* Toast Container custom styling */
+  .toast-container {
+    font-family: 'Arial', sans-serif; /* Consistent font */
+  }

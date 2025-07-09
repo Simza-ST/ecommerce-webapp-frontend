@@ -1,0 +1,111 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ffd700; /* Gold color */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffd700; /* Gold color */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.btn-checkout {
+  background-color: #ffd700; /* Gold color */
+  color: #000; /* Black text color */
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-checkout:hover {
+  background-color: #e6c200; /* Darker gold for hover state */
+}
+
+.payment-method-indicator {
+  margin-left: 10px;
+  font-size: 0.8rem;
+  color: #000; /* Black text color */
+}
+
+.address-form {
+  /* Style your form elements here */
+}
+
+.cash-on-collection-address {
+  /* Style your address display here */
+}
+
+.cash-on-collection-form .form-label {
+  color: #000; /* Black text color */
+}
+
+.cash-on-collection-form .form-control {
+  background-color: #fff; /* White background */
+  border: 1px solid #ffd700; /* Gold border */
+  color: #000; /* Black text color */
+}
+
+.cash-on-collection-form .form-control:focus {
+  border-color: #e6c200; /* Darker gold for focus state */
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25); /* Gold glow */
+}
+
+.cash-on-collection-form .btn-checkout {
+  background-color: #ffd700; /* Gold color */
+  color: #000; /* Black text color */
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%; /* Full width */
+  border: 1px solid transparent; /* Transparent border */
+}
+
+.cash-on-collection-form .btn-checkout:hover {
+  background-color: #e6c200; /* Darker gold for hover state */
+  border-color: #d4af37; /* Gold border for hover state */
+}

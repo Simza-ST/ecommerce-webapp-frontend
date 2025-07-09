@@ -1,0 +1,66 @@
+/* About.css */
+
+.about-section {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.about-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.about-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: gold;
+    margin: 0 auto;
+    position: relative;
+    top: 16px;
+}
+
+.about-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Reuse this part if you have a specific button in About section */
+.about-button {
+    background-color: #ffdd00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.about-button:hover {
+    background-color: #ffd700;
+}
+
+/* Include this if you have inputs in your About section */
+.about-input[type="number"] {
+    width: 70px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,180 @@
+/* General theme colors */
+:root {
+    --black: #000;
+    --white: #fff;
+    --gold: #ffd700;
+}
+
+/* Carousel customization */
+.carousel-caption-custom h1, .carousel-caption-custom p {
+    font-family: 'Arial', sans-serif;
+    color: var(--black);
+    text-shadow: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.carousel-caption-custom h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.carousel-caption-custom p {
+    font-size: 1.5rem;
+}
+
+/* Order Now heading */
+.heading-animate {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--black);
+    border: 2px solid var(--gold);
+    padding: 0.5rem;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Order Products button */
+.order-button {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-color: var(--black);
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0.5; }
+}
+
+/* Testimonials */
+.custom-testimonial {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    color: var(--black);
+}
+
+.testimonial-heading {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--black);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.contact-form-container {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.contact-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--black);
+    text-align: center;
+}
+
+/* Submit button */
+.submit-button {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    font-weight: bold;
+    color:var(--black);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-caption-custom h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption-custom p {
+        font-size: 1.2rem;
+    }
+}
+
+/* New styles for updated features */
+.heading-animate {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gold);
+    background-color: var(--black);
+    padding: 0.5rem;
+    border: 2px solid var(--gold);
+}
+
+.heading-animate + .arrow-icon {
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+    color: var(--black);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.category-carousel .carousel-caption {
+    background-color: var(--black);
+    color: var(--black);
+}
+
+.testimonial-card {
+    position: relative;
+    background-color:grey;
+    animation: colorWave 5s infinite;
+}
+
+@keyframes colorWave {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(-30deg); }
+}
+
+.contact-form-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.submit-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+}
+
+/* Update responsive adjustments if necessary */
+@media (max-width: 768px) {
+    /* ... (Previous responsive CSS remains the same) */
+}
+
+/* Additional responsive styling */
+@media (max-width: 992px) {
+    .contact-form-container {
+        width: 100%;
+    }
+}
