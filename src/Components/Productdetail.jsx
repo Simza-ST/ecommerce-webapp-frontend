@@ -1,35 +1,73 @@
-// Productdetail.jsx
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
+import { Spinner } from 'react-bootstrap';
 
-export const Productdetail = ({ handleAddToCart }) => {
+export const Productdetail = ({ handleAddToCart, fetchProductById }) => {
     const [product, setProduct] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
     const { productId } = useParams();
 
     useEffect(() => {
         const getProductDetails = async () => {
             if (!productId) {
-                toast.error("Product ID is undefined");
+                setError('Product ID is undefined');
+                toast.error('Product ID is undefined');
                 return;
             }
+            setIsLoading(true);
+            setError(null);
             try {
-                const response = await axios.get(`https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/product/${productId}`);
-                setProduct(response.data); // Assuming the response has a `product` property
+                const data = await fetchProductById(productId);
+                if (!data || !data.id || !data.name || !data.price) {
+                    throw new Error('Invalid product data');
+                }
+                console.log('Fetched product details:', data);
+                setProduct(data);
             } catch (error) {
-                toast.error("Failed to load product details");
+                const message = error.message || 'Failed to load product details';
+                setError(message);
+                toast.error(message);
+            } finally {
+                setIsLoading(false);
             }
         };
         getProductDetails();
-    }, [productId]);
+    }, [productId, fetchProductById]);
 
-    if (!product) {
-        return <div>Loading...</div>;
+    const handleAddProductToCart = (product) => {
+        console.log('Adding product to cart from Productdetail:', product);
+        handleAddToCart(product);
+    };
+
+    if (isLoading) {
+        return (
+            <div className="text-center my-5">
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        );
     }
 
-    
+    if (error) {
+        return (
+            <div className="text-center my-5 text-danger">
+                <h4>Error</h4>
+                <p>{error}</p>
+            </div>
+        );
+    }
+
+    if (!product) {
+        return (
+            <div className="text-center my-5">
+                <p>No product found.</p>
+            </div>
+        );
+    }
 
     return (
         <div className="pd-wrap">
@@ -53,7 +91,11 @@ export const Productdetail = ({ handleAddToCart }) => {
                             </div>
                             <p>{product.description}</p>
                             <div className="my-4">
-                                <button className="btn btn-dark py-2 rounded-0 text-warning" onClick={() => handleAddToCart(product)}>
+                                <button
+                                    className="btn btn-dark py-2 rounded-0 text-warning"
+                                    onClick={() => handleAddProductToCart(product)}
+                                    aria-label={`Add ${product.name} to cart`}
+                                >
                                     ADD TO CART
                                 </button>
                             </div>
@@ -63,4 +105,9 @@ export const Productdetail = ({ handleAddToCart }) => {
             </div>
         </div>
     );
+};
+
+Productdetail.propTypes = {
+    handleAddToCart: PropTypes.func.isRequired,
+    fetchProductById: PropTypes.func.isRequired,
 };

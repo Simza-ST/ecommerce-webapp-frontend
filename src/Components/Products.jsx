@@ -1,33 +1,76 @@
-import { useEffect, useState } from "react";
-import { Card } from "./Card";
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { getProducts } from '../hooks/Api';
+import { Card } from './Card';
+import { Spinner } from 'react-bootstrap';
 
-export const Products = ({ handleAddToCart, ProductShow}) => {
+export const Products = ({ handleAddToCart, loggedInUser }) => {
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        const fetchProducts = async () => {
+            setIsLoading(true);
+            try {
+                const response = await getProducts();
+                console.log('Fetched products:', response.data);
+                setProducts(response.data || []);
+            } catch (error) {
+                const message = error.response?.data?.message || 'Could not load products';
+                toast.error(message);
+                setProducts([]);
+            } finally {
+                setIsLoading(false);
+            }
+        };
         fetchProducts();
     }, []);
 
-    const fetchProducts = async () => {
-        try {
-            const response = await fetch('https://thembis-bold-bite-backend-1f5615026bca.herokuapp.com/product/');
-            const data = await response.json();
-            setProducts(data);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-        }
+    const ProductShow = (productId) => {
+        console.log('Navigating to product:', productId);
+        navigate(`/product/${productId}`);
+    };
+
+    const handleAddProductToCart = (product) => {
+        console.log('Adding product to cart from Products:', product);
+        handleAddToCart(product);
     };
 
     return (
-        <section className="shop container">
-            <h2 className="section-title text-center">Shop Products</h2>
-            <div className="shop-content">
-                <div className="row gy-2">
-                    {products.map((item, index) => (
-                        <Card key={index} item={{ ...item, qty: 1 }} ProductShow={ProductShow} handleAddToCart={handleAddToCart} loggedInUser={!!localStorage.getItem('token')} />
-                    ))}
+        <div className="products">
+            <div className="container">
+                <div className="row">
+                    {isLoading ? (
+                        <div className="text-center my-5">
+                            <Spinner animation="border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </Spinner>
+                        </div>
+                    ) : products.length === 0 ? (
+                        <div className="text-center my-5">
+                            <p>No products available.</p>
+                        </div>
+                    ) : (
+                        products.map((item) => (
+                            <Card
+                                key={item.id}
+                                item={item}
+                                handleAddToCart={handleAddProductToCart}
+                                ProductShow={() => ProductShow(item.id)}
+                                loggedInUser={loggedInUser}
+                            />
+                        ))
+                    )}
                 </div>
             </div>
-        </section>
+        </div>
     );
+};
+
+Products.propTypes = {
+    handleAddToCart: PropTypes.func.isRequired,
+    loggedInUser: PropTypes.bool.isRequired,
 };
