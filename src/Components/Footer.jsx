@@ -41,7 +41,7 @@ export const Footer = () => {
                                         <a href="/home">Address </a>
                                     </li>
                                     <li>
-                                        <a href="/home">353 Matsulu -C, Nelspruit Mpumalanga</a>
+                                        <a href="/home">114/1456 Naas B, Kamaqhekeza Mpumalanga</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,7 +54,7 @@ export const Footer = () => {
                                 <p className="contact-info mt-4">
                                     Contact us if need help withanything
                                 </p>
-                                <p className="contact-info">+27 79 264 7735</p>
+                                <p className="contact-info">+27 79 710 5951</p>
                                 <div className="mt-5">
                                     <ul className="list-inline">
                                         <li className="list-inline-item">

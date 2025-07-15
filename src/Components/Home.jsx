@@ -1,8 +1,8 @@
 import React from 'react';
-import image1 from '/images/homeBackground.jpg';
-import image2 from '/images/businessOwner.jpg';
-import atcharImage from '/images/atcharHome.jpg';
-import chilliImage from '/images/chillHome.jpg';
+import image1 from '/images/BusinessCar1.jpg';
+import image2 from '/images/BusinessOwer.jpg';
+import atcharImage from '/images/chickprod3.jpg';
+import chilliImage from '/images/prodchick1.jpg';
 import { Container, Row, Col, Card, Button, Form, Carousel } from 'react-bootstrap';
 import './HomePage.css';
 import { useNavigate } from 'react-router-dom';
@@ -35,8 +35,8 @@ const Home = () => {
                                     style={{ height: '550px' ,marginTop: '30px' }}
                                 />
                                 <Carousel.Caption className="carousel-caption-custom">
-                                    <h1>Welcome to Thembi's Bold Bite Bazaar</h1>
-                                    <p>Selling the best Atchar and Chilli around!</p>
+                                                  <h1>Welcome to Mom Lindi's Chickens</h1>
+                                    <p>Selling the best and biggest chickens you have ever seen!</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -47,8 +47,8 @@ const Home = () => {
                                     style={{ height: '550px', marginTop: '30px' }}
                                 />
                                 <Carousel.Caption className="carousel-caption-custom">
-                                    <h1>Making delicious home-made atchar since '09!</h1>
-                                    <p>"Bringing life and soul to the dinner table is what we do"</p>
+                                    <h1>gets delivered at you own door steps when you buy more than 10</h1>
+                                    <p>"you can also get them defeather and comes with every part on it except feathers"</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
@@ -58,7 +58,7 @@ const Home = () => {
             <Container fluid>
                 <Row className="align-items-center justify-content-center mt-4 ms-8 text-center">
                     <Col>
-                        <h1 className="text-center heading-animate">Click Below To Check Out Our Products!</h1>
+                        <h1 className="text-center heading-animate">Click Below To Check Our Product!</h1>
                         <Carousel className="category-carousel">
                             <Carousel.Item>
                                 <img
@@ -68,7 +68,7 @@ const Home = () => {
                                     style={{ height: '500px' }}
                                 />
                                 <Carousel.Caption>
-                                    <h2 className="carousel-caption-custom">Explore our delicious Atchar collection.</h2>
+                                    <h2 className="carousel-caption-custom">keeping our customers happy is our calling.</h2>
                                     <Button className="order-button" onClick={handleOrderProducts}>Order Products</Button>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -80,7 +80,7 @@ const Home = () => {
                                     style={{ height: '500px' }}
                                 />
                                 <Carousel.Caption>
-                                    <h2 className="carousel-caption-custom">Discover our succulent spicy Chilli products.</h2>
+                                    <h2 className="carousel-caption-custom">The best you have ever seen delivered at your door step.</h2>
                                     <Button className="order-button" onClick={handleOrderProducts}>Order Products</Button>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -94,10 +94,10 @@ const Home = () => {
                             <Card.Body>
                                 <div className="d-flex align-items-center mb-3">
                                     <AiFillStar className="star-icon" />
-                                    <Card.Title className="ms-2">John Doe</Card.Title>
+                                    <Card.Title className="ms-2">Sipho skhosane</Card.Title>
                                 </div>
                                 <Card.Text>
-                                    "The Atchar from Thembi's Bold Bite Bazaar is absolutely delicious! Highly recommended."
+                                    "Ngiyativuma mine ngitsi i "Highly recommended them!!!""
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -105,10 +105,10 @@ const Home = () => {
                             <Card.Body>
                                 <div className="d-flex align-items-center mb-3">
                                     <AiFillStar className="star-icon" />
-                                    <Card.Title className="ms-2">Jane Smith</Card.Title>
+                                    <Card.Title className="ms-2">Themba Sibitane</Card.Title>
                                 </div>
                                 <Card.Text>
-                                    "I can't get enough of the Chilli products from Thembi's Bold Bite Bazaar. They add the perfect kick to my meals!"
+                                    "Both me and my wife work but we love our chicken freshly defeather it tests very refreshing and @Mom lindi always delivers the best !"
                                 </Card.Text>
                             </Card.Body>
                         </Card>
