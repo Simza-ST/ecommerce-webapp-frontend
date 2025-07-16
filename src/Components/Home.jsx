@@ -97,7 +97,7 @@ const Home = () => {
                                     <Card.Title className="ms-2">Sipho skhosane</Card.Title>
                                 </div>
                                 <Card.Text>
-                                    "Ngiyativuma mine ngitsi i "Highly recommended them!!!""
+                                    "Ngiyativuma mine ngitsi " i Highly recommended them!!!""
                                 </Card.Text>
                             </Card.Body>
                         </Card>
