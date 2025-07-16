@@ -329,10 +329,10 @@ export const Cart = ({
 Cart.propTypes = {
     cartItems: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            id: PropTypes.number.isRequired,
             quantity: PropTypes.number.isRequired,
             product: PropTypes.shape({
-                id: PropTypes.string.isRequired,
+                id: PropTypes.number.isRequired,
                 name: PropTypes.string.isRequired,
                 price: PropTypes.number.isRequired,
                 imageURL: PropTypes.string,
