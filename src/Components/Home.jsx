@@ -1,8 +1,8 @@
 import React from 'react';
 import image1 from '/images/BusinessCar1.jpg';
 import image2 from '/images/BusinessOwer.jpg';
-import atcharImage from '/images/chickprod3.jpg';
-import chilliImage from '/images/prodchick1.jpg';
+import atcharImage from '/images/chicken-eggs.jpg';
+import chilliImage from '/images/chickens.jpg';
 import { Container, Row, Col, Card, Button, Form, Carousel } from 'react-bootstrap';
 import './HomePage.css';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +19,7 @@ const Home = () => {
     const navigate = useNavigate(); // Hook for navigation
 
     const handleOrderProducts = () => {
-        navigate('/'); // Navigate to the Products route
+        navigate('/products'); // Navigate to the Products route
     };
     return (
         <div>
